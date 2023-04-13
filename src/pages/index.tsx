@@ -1,8 +1,9 @@
-import { ToastContainer, toast } from "react-toastify";
 
 export default function Home() {
   return(
     <main>
+      <p className="text-white">Hello javascript</p>
+      
     </main>
   )
 }

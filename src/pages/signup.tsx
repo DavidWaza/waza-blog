@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import styles from '../styles/signup.module.css'
 import React, { useState } from "react";
@@ -121,7 +120,7 @@ const Signup:React.FC<signupProps> = () => {
               value={state.firstName}
               onChange={handleInputChange}
               placeholder="First Name"
-              className="py-3 px-10 w-full inline-block"
+              className="py-3 px-10 w-full inline-block rounded"
             />
             {firstMessage && <p className={styles.error}>{firstMessage}</p>}
           </div>
@@ -133,7 +132,7 @@ const Signup:React.FC<signupProps> = () => {
               value={state.lastName}
               onChange={handleInputChange}
               placeholder="Last Name"
-              className="py-3 px-10 w-full inline-block"
+              className="py-3 px-10 w-full inline-block rounded"
 
             />
             {lastMessage && <p className={styles.error}>{lastMessage}</p>}
@@ -146,7 +145,7 @@ const Signup:React.FC<signupProps> = () => {
               value={state.email}
               onChange={handleInputChange}
               placeholder="Email"
-              className="py-3 px-10 w-full inline-block"
+              className="py-3 px-10 w-full inline-block rounded"
 
             />
             {emailMessage && <p className={styles.error}>{emailMessage}</p>}
