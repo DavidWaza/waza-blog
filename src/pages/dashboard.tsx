@@ -1,8 +1,8 @@
-const Dashboard = () => {
+const Dashboard = ({ admins }: any) => {
   return (
     <>
       <div>
-        <p className="text-white text-center">dashboard</p>
+        {/* <p className="text-white text-center">Welcome {users.name}</p> */}
       </div>
     </>
   );

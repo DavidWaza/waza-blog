@@ -122,7 +122,7 @@ const Signup:React.FC<signupProps> = () => {
               placeholder="First Name"
               className="py-3 px-10 w-full inline-block rounded"
             />
-            {firstMessage && <p className={styles.error}>{firstMessage}</p>}
+            {firstMessage && <p className="text-red-600">{firstMessage}</p>}
           </div>
           <div className="my-[30px] mx-[0px]">
             <AiOutlineUser className={styles.icon} />
@@ -135,7 +135,7 @@ const Signup:React.FC<signupProps> = () => {
               className="py-3 px-10 w-full inline-block rounded"
 
             />
-            {lastMessage && <p className={styles.error}>{lastMessage}</p>}
+            {lastMessage && <p className="text-red-600">{lastMessage}</p>}
           </div>
           <div className="my-[30px] mx-[0px]">
             <AiOutlineMail className={styles.icon} />
@@ -148,7 +148,7 @@ const Signup:React.FC<signupProps> = () => {
               className="py-3 px-10 w-full inline-block rounded"
 
             />
-            {emailMessage && <p className={styles.error}>{emailMessage}</p>}
+            {emailMessage && <p className="text-red-600">{emailMessage}</p>}
           </div>
 
           <div className="my-[30px] mx-[0px]">
@@ -163,7 +163,7 @@ const Signup:React.FC<signupProps> = () => {
 
             />
             {passwordMessage && (
-              <p className={styles.error}>{passwordMessage}</p>
+              <p className="text-red-600">{passwordMessage}</p>
             )}
           </div>
 
