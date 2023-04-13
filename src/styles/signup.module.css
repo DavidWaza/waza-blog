@@ -1,0 +1,72 @@
+.wrapper {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    padding: 5% 10%;
+    background-color: #FAEBD7;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 15%);
+}
+
+.container>p {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.formControl>input::placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+
+.authorAlready {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.button {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.button>button {
+    padding: 10px 50px;
+    border: none;
+    background-color: #292929;
+    color: antiquewhite;
+    border-radius: 5px;
+}
+
+.icon {
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 10px;
+}
+.policy {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 20px;
+}
+.error {
+    color: rgb(177, 27, 0);
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .wrapper{
+        height: 100vh;
+    }
+    .container {
+        width: 80%;
+    }
+    .policy{
+        font-size: 12px;
+    }
+}

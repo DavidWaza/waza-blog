@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +10,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background: #161618;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +21,35 @@
   }
 }
 
+a.nav {
+  display: inline-block;
+  align-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 2% 0px;
+  margin: 0px 20px 0px 0px;
+  text-decoration: none !important;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: all .5s ease-out;
+}
+
+a.nav:hover {
+  color: antiquewhite;
+  transition: all .5s ease-out;
+}
+
+ul.list {
+  list-style: none;
+}
+
+.writer {
+  color: #000;
+  background-color: antiquewhite;
+  padding: 10px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: (var(--background));
 }
