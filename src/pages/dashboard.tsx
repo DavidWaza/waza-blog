@@ -1,8 +1,11 @@
-const Dashboard = ({ admins }: any) => {
+const Dashboard = ({ admin }:any) => {
+  console.log(admin)
   return (
     <>
       <div>
-        {/* <p className="text-white text-center">Welcome {users.name}</p> */}
+        <p className="text-center my-5 text-white">
+
+        </p>
       </div>
     </>
   );
