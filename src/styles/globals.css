@@ -53,3 +53,6 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: (var(--background));
 }
+.header-container {
+  @apply bg-[#faebd7] text-center text-black py-20;
+}

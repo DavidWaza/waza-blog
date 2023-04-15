@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/signup.module.css";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import Dashboard from "./dashboard";
+import Home from ".";
 
 export interface usersProps {
   name: string;
@@ -13,8 +14,8 @@ export interface usersProps {
   password: any;
 }
 export interface stateProps {
-  email: string
-  password:string
+  email: string;
+  password: string;
 }
 const Login: React.FC<usersProps> = ({ name, email, password }) => {
   const router = useRouter();
@@ -58,10 +59,9 @@ const Login: React.FC<usersProps> = ({ name, email, password }) => {
       if (loggedInUser.length == 1) {
         setLoggedInUser(loggedInUser[0]);
         setIsSignedIn(true);
-        router.push("/dashboard");
+        // router.push("/dashboard");
       } else {
         setMessage("error logging in");
-        router.push("/signup");
         toast.error("Not a User", { theme: "dark" });
       }
     } else {
@@ -72,7 +72,9 @@ const Login: React.FC<usersProps> = ({ name, email, password }) => {
   return (
     <>
       {isSignedIn ? (
-        <Dashboard admins={loggedInUser} />
+        <Link href={"/"}>
+          <Dashboard admins={loggedInUser} />
+        </Link>
       ) : (
         <div className={styles.wrapper}>
           <div className={styles.container}>
