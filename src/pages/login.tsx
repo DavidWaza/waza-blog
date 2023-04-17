@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/signup.module.css";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import Dashboard from "./dashboard";
-import Home from ".";
 
 export interface usersProps {
   name: string;
@@ -19,6 +18,8 @@ export interface stateProps {
 }
 const Login: React.FC<usersProps> = ({ name, email, password }) => {
   const router = useRouter();
+  const { push } = useRouter();
+
   const admins = [
     {
       name: "david",
@@ -35,6 +36,11 @@ const Login: React.FC<usersProps> = ({ name, email, password }) => {
       email: "soso@gmail.com",
       password: "sosolay",
     },
+    {
+      name: "sandra",
+      email: "sandra@gmail.com",
+      password: "sandy4life",
+    },
   ];
   const [users, setUsers] = useState<stateProps>({
     email: "",
@@ -47,7 +53,6 @@ const Login: React.FC<usersProps> = ({ name, email, password }) => {
   const handleSubmit = (e: any) => {
     e.preventDefault;
   };
-
   const login = (e: any) => {
     e.preventDefault();
     let loggedInUser;
@@ -59,9 +64,9 @@ const Login: React.FC<usersProps> = ({ name, email, password }) => {
       if (loggedInUser.length == 1) {
         setLoggedInUser(loggedInUser[0]);
         setIsSignedIn(true);
-        // router.push("/dashboard");
       } else {
         setMessage("error logging in");
+        router.push("/signup");
         toast.error("Not a User", { theme: "dark" });
       }
     } else {
@@ -69,12 +74,17 @@ const Login: React.FC<usersProps> = ({ name, email, password }) => {
       toast.error("Fields are empty!", { theme: "dark" });
     }
   };
+
+  useEffect(() => {
+    if(loggedInUser == 1){
+      router.push('/dashboard')
+    }
+  }, [])
+
   return (
     <>
       {isSignedIn ? (
-        <Link href={"/"}>
           <Dashboard admins={loggedInUser} />
-        </Link>
       ) : (
         <div className={styles.wrapper}>
           <div className={styles.container}>
