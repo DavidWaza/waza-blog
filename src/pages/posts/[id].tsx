@@ -1,12 +1,10 @@
-import React from "react";
-import { getAllPostIds, getPostData  } from '../../../lib/posts';
+import { getAllPostIds, getPostData,getPostContents } from '../../../lib/posts';
 
-
-const PostPage = ({postData}:{postData:any}) => {
-  console.log(postData.id);
+const PostPage = ({postData, Contents}:{postData:any, Contents:any}) => {
   return (
     <div>
       <h1 className="text-white text-center">{postData.title}</h1>
+      <p className="text-white">{Contents}</p>
     </div>
   );
 };
@@ -21,11 +19,13 @@ export async function getStaticPaths(){
   };
 }
 
-export async function getStaticProps({params}: {params:any}) {
+export async function getStaticProps({params, content}: {params:any, content:any}) {
   const postData = getPostData(params.id);
+  const Contents = getPostContents(content)
   return {
     props: {
       postData,
+      Contents,
     },
   };
 }
