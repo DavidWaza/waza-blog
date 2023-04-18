@@ -6,19 +6,11 @@ import { useRouter, usePathname } from "next/navigation";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import Dashboard from "./dashboard";
+import { usersProps, stateProps } from "../../lib/scripts";
 
-export interface usersProps {
-  name: string;
-  email: string;
-  password: any;
-}
-export interface stateProps {
-  email: string;
-  password: string;
-}
-const Login: React.FC<usersProps> = ({ name, email, password }) => {
+
+const Login:React.FC<usersProps> = ({ name, email, password }) => {
   const router = useRouter();
-  const { push } = useRouter();
 
   const admins = [
     {

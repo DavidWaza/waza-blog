@@ -6,18 +6,12 @@ import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { signupProps, userState } from "../../lib/scripts";
 
-type signupProps = {
-    firstName: string,
-    lastName: string,
-    email:any,
-    password:any,
-    // button() =>
-}
 
 const Signup:React.FC<signupProps> = () => {
   const router = useRouter();
-  const [state, setState] = useState({
+  const [state, setState] = useState<userState>({
     firstName: "",
     lastName: "",
     email: "",
