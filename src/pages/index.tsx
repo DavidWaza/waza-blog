@@ -29,13 +29,13 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
               subtitle: string;
             }) => (
               <Col sm={4} key={id}>
-                <div className="my-12 text-white text-center hover:bg-[#212F3C] p-10">
-                  <Link href={`/posts/${id}`} className="no-underline">
+                <Link href={`/posts/${id}`} className="no-underline">
+                  <div className="my-12 text-white text-center hover:bg-[#212F3C] p-10">
                     <p className="text-2xl text-[#FAEBD7] font-bold">{title}</p>
-                  </Link>
-                  <p className="text-md text-md px-5">{subtitle}</p>
-                  <p className="text-muted">{date}</p>
-                </div>
+                    <p className="text-md text-md px-5">{subtitle}</p>
+                    <p className="text-muted">{date}</p>
+                  </div>
+                </Link>
               </Col>
             )
           )}
