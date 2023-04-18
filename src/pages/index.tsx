@@ -1,5 +1,6 @@
 import { getSortedPostsData } from "../../lib/posts";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap"
+import Link from "next/link";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -29,7 +30,9 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
             }) => (
               <Col sm={4} key={id}>
                 <div className="my-5 text-white">
-                  <p className="text-2xl">{title}</p>
+                  <Link href={`/posts/${id}`}>
+                    <p className="text-2xl">{title}</p>
+                  </Link>
                   <p className="text-md">{subtitle}</p>
                   <p className="text-muted">{date}</p>
                 </div>
