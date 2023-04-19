@@ -1,35 +1,20 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Waza's Blog
 
-First, run the development server:
+This blog provides a vast array of information covering diverse topics such as Real Estate, Automobiles, and Technology trends. It presents an excellent user interface to keep its readers up-to-date with the aforementioned categories.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The technology and libraries utilized to create this individual blog is as follows:
+- Next JS 13.0
+- React-Bootstrap[https://react-bootstrap.github.io/] - Layout formatting
+- Gray Matter[https://www.npmjs.com/package/gray-matter] - Front Matter Parser from a string or file
+- Markdown-To-JSX[https://www.npmjs.com/package/markdown-to-jsx] - Converts markdown files to JSX
+- No-Box Clients[https://nobox.cloud/] - Back-end Server to validates user information.
+- Tailwind CSS[https://tailwindcss.com] - Simplified CSS (Not vanilla)
+- TypeScript[https://www.typescriptlang.org] - For type checking and error handling
 
 ## Deploy on Vercel
 

@@ -60,8 +60,8 @@ export function getPostData(id: any) {
 }
 
 export function getPostContents(id:any) {
-  const folder = "posts/";
-  const file = `${folder}${id}.md`;
+  const folder = "../posts";
+  const file = path.join(folder, `${id}.md`);
   const content = fs.readFileSync(file, "utf8");
   return content;
 }
