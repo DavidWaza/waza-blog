@@ -9,12 +9,12 @@ This blog provides a vast array of information covering diverse topics such as R
 ## Learn More
 The technology and libraries utilized to create this individual blog is as follows:
 - Next JS 13.0
-- React-Bootstrap[https://react-bootstrap.github.io/] - Layout formatting
-- Gray Matter[https://www.npmjs.com/package/gray-matter] - Front Matter Parser from a string or file
-- Markdown-To-JSX[https://www.npmjs.com/package/markdown-to-jsx] - Converts markdown files to JSX
-- No-Box Clients[https://nobox.cloud/] - Back-end Server to validates user information.
-- Tailwind CSS[https://tailwindcss.com] - Simplified CSS (Not vanilla)
-- TypeScript[https://www.typescriptlang.org] - For type checking and error handling
+- [React-Bootstrap](https://react-bootstrap.github.io/) - Layout formatting
+- [Gray Matter](https://www.npmjs.com/package/gray-matter) - Front Matter Parser from a string or file
+- [Markdown-To-JSX](https://www.npmjs.com/package/markdown-to-jsx) - Converts markdown files to JSX
+- [No-Box Clients](https://nobox.cloud/) - Back-end Server to validates user information.
+- [Tailwind CSS](https://tailwindcss.com) - Simplified CSS (Not vanilla)
+- [TypeScript](https://www.typescriptlang.org) - For type checking and error handling
 
 ## Deploy on Vercel
 
