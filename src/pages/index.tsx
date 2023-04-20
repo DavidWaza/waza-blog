@@ -13,7 +13,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }: { allPostsData: any }) {
-  const length = 15;
   return (
     <main>
       <Container>

@@ -1,4 +1,4 @@
-import { getAllPostIds, getPostData,getPostContents } from '../../../lib/posts';
+import { getAllPostIds, getPostData } from '../../../lib/posts';
 
 const PostPage = ({postData, Contents}:{postData:any, Contents:any}) => {
   return (
@@ -21,11 +21,11 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params, content}: {params:any, content:any}) {
   const postData = getPostData(params.id);
-  const Contents = getPostContents(content)
+  // const Contents = getPostContents(content)
   return {
     props: {
       postData,
-      Contents,
+      // Contents,
     },
   };
 }

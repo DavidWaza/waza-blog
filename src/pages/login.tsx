@@ -5,8 +5,8 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { useRouter, usePathname } from "next/navigation";
 import { toast } from "react-toastify";
 import Link from "next/link";
-import Dashboard from "./dashboard";
 import { usersProps, stateProps } from "../../lib/scripts";
+import Home from "../../src/pages/index";
 
 
 const Login:React.FC<usersProps> = ({ name, email, password }) => {
@@ -76,7 +76,7 @@ const Login:React.FC<usersProps> = ({ name, email, password }) => {
   return (
     <>
       {isSignedIn ? (
-          <Dashboard admins={loggedInUser} />
+          <Home allPostsData={undefined}  />
       ) : (
         <div className={styles.wrapper}>
           <div className={styles.container}>
