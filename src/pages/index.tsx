@@ -19,7 +19,7 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
         <Row>
           {allPostsData.map((postData: any) => (
             <div key={postData.id}>
-              <Row className="my-5 hover:bg-[#212F3C] p-10">
+              <Row className="my-5 hover:bg-[#212F3C] bg-[#212f3c] md:bg-transparent p-10">
                 <Col sm={4}>
                   <div className="border-b-4 border-[#FAEBD7] font-bold ">
                     <p className="Poppins text-muted text-center">
