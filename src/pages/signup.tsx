@@ -28,7 +28,7 @@ const Signup:React.FC<signupProps> = () => {
   const handleInputChange = (event:any) => {
     const { name, value } = event.target;
     setState((prevProps) => ({
-      ...prevProps,
+      ...prevProps, 
       [name]: value,
     }));
   };

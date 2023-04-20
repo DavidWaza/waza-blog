@@ -3,6 +3,8 @@ title: "Wolfhunter: A PICO-8 RPG"
 subtitle: "Implementing Pokemon-like combat mechanics in PICO-8."
 category: Technology
 date: "2020-12-22"
+src: /images/pico.png
+content: In a previous post I talked about how making retro 8-bit games is a great way for fledgling developers to learn new things whilst expanding their portfolio.
 ---
 
 In a [previous post](./retro-games-with-pico-8) I talked about how making retro 8-bit games is a great way for fledgling developers to learn new things whilst expanding their portfolio.

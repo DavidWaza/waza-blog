@@ -56,3 +56,9 @@ body {
 .header-container {
   @apply bg-[#faebd7] text-center text-black py-20;
 }
+.Poppins {
+  font-family: 'Poppins', sans-serif;
+}
+.category {
+  font-family: 'Playfair Display', serif;
+}
