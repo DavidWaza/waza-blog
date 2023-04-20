@@ -14,16 +14,16 @@ const PostPage = ({ postData, Contents }: { postData: any; Contents: any }) => {
         </Col>
       </Row>
       <Row>
-        <Col className="border-t-2 border-b my-5">
-          <div>
-            <p className="text-white my-3 category">{postData.date}</p>
+        <Col className="border-t-2 border-b">
+          <div className="flex justify-center md:justify-start">
+            <p className="text-white my-3 category ">{postData.date}</p>
           </div>
-          <h1 className="category text-[#FAEBD7] text-center my-5">
+          <h1 className="category text-[#FAEBD7] text-center my-5 px-3">
             {postData.title}
           </h1>
-          <div className="flex justify-end">
+          <div className="flex justify-center md:justify-end">
             <Link href={"/"} className="no-underline hover:underline">
-              <p className="text-slate-400 category">By {postData.author}</p>
+              <p className="text-slate-400 category ">By {postData.author}</p>
             </Link>
           </div>
         </Col>

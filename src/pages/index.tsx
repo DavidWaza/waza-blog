@@ -41,7 +41,7 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
                       </p>
                     </Link>
                     <div>
-                      <p className="Poppins md:text-xl text-md text-[#DB2800] my-3">
+                      <p className="Poppins md:text-xl text-md text-[#D7E4E9] my-3">
                         {postData.subtitle}
                       </p>
                     </div>
