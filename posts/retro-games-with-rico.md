@@ -3,6 +3,7 @@ title: "Create retro games with PICO-8"
 subtitle: "8-bit games are a great way to learn and expand your portfolio."
 category: Technology
 date: "2020-12-19"
+author: David Waza
 cr: ["https://www.artstation.com/shizuorin"]
 src: /images/pico.png
 content: After watching High Score on Netflix, I was suddenly inspired to develop a retro-style game. I think it was a combination of the aesthetics and nostalgia that motivated me.

@@ -3,6 +3,7 @@ title: "Using AI to generate poetry"
 subtitle: "I used GPT-3 to generate poetry and other creative content."
 category: Technology
 date: "2021-08-27"
+author: David Waza
 src: https://res.cloudinary.com/ddwkojhaj/image/upload/q_auto/v1681991311/pexels-alex-knight-2599244_waioqw.jpg
 content: I was recently granted access to the, a very powerful language model that can be used to do all sorts of magic like chat bot generation, article summary
 ---
