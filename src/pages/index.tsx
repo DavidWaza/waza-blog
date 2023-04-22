@@ -19,15 +19,15 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
         <Row>
           {allPostsData.map((postData: any) => (
             <div key={postData.id}>
-              <Row className="my-5 hover:bg-[#212F3C] bg-[#212f3c] md:bg-transparent p-10">
-                <Col sm={4}>
+              <Row className="my-2 hover:bg-[#212F3C] bg-[#212f3c] md:bg-transparent p-10">
+                <Col sm={6} md={6} lg={4}>
                   <div className="border-b-4 border-[#FAEBD7] font-bold ">
                     <p className="Poppins text-muted text-center">
                       {postData.date}
                     </p>
                   </div>
                 </Col>
-                <Col sm={4}>
+                <Col sm={6} md={6} lg={4}>
                   <div className="">
                     <Link
                       href={`/posts/${postData.id}`}
@@ -52,13 +52,13 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
                     </div>
                   </div>
                 </Col>
-                <Col sm={4}>
-                  <figure>
+                <Col sm={6} md={6} lg={4}>
+                  <figure className="md:h-fu">
                     <Image
                       alt="img"
                       src={postData.src}
                       width={600}
-                      height={600}
+                      height={700}
                     />
                   </figure>
                 </Col>

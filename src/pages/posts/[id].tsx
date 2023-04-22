@@ -1,15 +1,23 @@
 import Image from "next/image";
-import { getAllPostIds, getPostData } from "../../../lib/posts";
+import {
+  getAllPostIds,
+  getPostData,
+  getPostContents,
+} from "../../../lib/posts";
 import { Container, Col, Row } from "react-bootstrap";
 import Link from "next/link";
+import Markdown from "markdown-to-jsx";
 
-const PostPage = ({ postData, Contents }: { postData: any; Contents: any }) => {
+const PostPage = ({ postData, content }: { postData: any; content: any }) => {
+  console.log(content);
   return (
     <Container>
       <Row>
         <Col>
-        <div className="flex justify-center my-5">
-          <p className="category bg-[#DB2800] p-3 w-40 text-center text-[#faebd7]">{postData.category}</p>
+          <div className="flex justify-center my-5">
+            <p className="category bg-[#DB2800] p-3 w-40 text-center text-[#faebd7]">
+              {postData.category}
+            </p>
           </div>
         </Col>
       </Row>
@@ -29,10 +37,17 @@ const PostPage = ({ postData, Contents }: { postData: any; Contents: any }) => {
         </Col>
       </Row>
       <Row>
-        <div className="flex justify-center">
+        <div className="flex justify-center my-5">
           <figure>
-            <Image src={postData.src} alt="alt" width={900} height={500} />
+            <Image src={postData.src} alt="alt" width={400} height={300} />
           </figure>
+        </div>
+      </Row>
+      <Row>
+        <div>
+          <Markdown className="Poppins text-white">
+            {content}
+          </Markdown>
         </div>
       </Row>
     </Container>
@@ -49,19 +64,13 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({
-  params,
-  content,
-}: {
-  params: any;
-  content: any;
-}) {
+export async function getStaticProps({ params }: { params: any }) {
   const postData = getPostData(params.id);
-  // const Contents = getPostContents(content)
+  const content = getPostContents(postData.id);
   return {
     props: {
       postData,
-      // Contents,
+      content,
     },
   };
 }
