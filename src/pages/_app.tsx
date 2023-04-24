@@ -13,19 +13,16 @@ import ScrollTo from "@/components/ScrollToTop/ScrollToTop";
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  
-// Enable navigation loader
+
+  // Enable navigation loader
   useEffect(() => {
     router.events.on("routeChangeStart", () => {
-      console.log("show me timer");
       setLoading(true);
     });
     router.events.on("routeChangeComplete", () => {
-      console.log("clear timeout");
       setLoading(false);
     });
   }, []);
-
 
   return (
     <AnimatePresence mode="wait">
@@ -40,11 +37,15 @@ export default function App({ Component, pageProps }: AppProps) {
         variants={{
           initialState: {
             opacity: 0,
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
           },
           animateState: {
             opacity: 1,
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
           },
-          exitState: {},
+          exitState: {
+            clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+          },
         }}
         className="base-page-size"
       >

@@ -53,12 +53,24 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: (var(--background));
 }
+
 .header-container {
   @apply bg-[#faebd7] text-center text-black py-20;
 }
+
 .Poppins {
   font-family: 'Poppins', sans-serif;
 }
+
 .category {
   font-family: 'Playfair Display', serif;
+}
+
+.base-page-size {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.loader {
+  min-height: 100vh;
 }
