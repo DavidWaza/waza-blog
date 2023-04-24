@@ -16,7 +16,6 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }: { allPostsData: any }) {
   return (
-
     <motion.div
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -25,7 +24,7 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
       }}
     >
       <main>
-      <Header />
+        <Header />
         <Container>
           <Row>
             {allPostsData.map((postData: any) => (
@@ -56,17 +55,16 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
                           {postData.subtitle}
                         </p>
                       </div>
-                      <motion.div
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.75,
-                        }}
-                      >
+                      <div>
                         <p className="Poppins, text-md text-white mt-3">
                           {postData.content}
                         </p>
-                      </motion.div>
+                      </div>
+                      <div>
+                        <p className="category text-muted">
+                          By {postData.author}
+                        </p>
+                      </div>
                     </div>
                   </Col>
                   <Col sm={6} md={6} lg={4}>

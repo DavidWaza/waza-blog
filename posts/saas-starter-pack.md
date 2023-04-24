@@ -4,7 +4,7 @@ subtitle: "A full-stack SaaS project with authentication and payments."
 category: Technology
 date: "2021-07-12"
 src: /images/saasi.jpeg
-author: David Waza
+author: Sars on the beatz
 content: The SaaS (software as a service model underpins many of today's successful new businesses. Knowing how to build one from start to finish....
 ---
 
