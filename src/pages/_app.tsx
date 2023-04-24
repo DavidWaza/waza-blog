@@ -9,11 +9,12 @@ import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/router";
 import Loading from "./loading";
-
+import ScrollTo from "@/components/ScrollToTop/ScrollToTop";
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
+  
+// Enable navigation loader
   useEffect(() => {
     router.events.on("routeChangeStart", () => {
       console.log("show me timer");
@@ -24,6 +25,11 @@ export default function App({ Component, pageProps }: AppProps) {
       setLoading(false);
     });
   }, []);
+
+// Scroll to the top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <AnimatePresence mode="wait">
@@ -42,8 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
           animateState: {
             opacity: 1,
           },
-          exitState: {
-          },
+          exitState: {},
         }}
         className="base-page-size"
       >
@@ -52,6 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Navbar name={""} path={""} />
         {loading && <Loading />}
         <Component {...pageProps} />
+        <ScrollTo />
       </motion.div>
     </AnimatePresence>
   );
