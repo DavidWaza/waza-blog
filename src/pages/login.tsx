@@ -7,9 +7,9 @@ import { toast } from "react-toastify";
 import Link from "next/link";
 import { usersProps, stateProps } from "../../lib/scripts";
 import Home from "../../src/pages/index";
+import { motion } from "framer-motion";
 
-
-const Login:React.FC<usersProps> = ({ name, email, password }) => {
+const Login: React.FC<usersProps> = ({ name, email, password }) => {
   const router = useRouter();
 
   const admins = [
@@ -68,15 +68,21 @@ const Login:React.FC<usersProps> = ({ name, email, password }) => {
   };
 
   useEffect(() => {
-    if(loggedInUser == 1){
-      router.push('/dashboard')
+    if (loggedInUser == 1) {
+      router.push("/dashboard");
     }
-  }, [])
+  }, []);
 
   return (
-    <>
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.75,
+      }}
+    >
       {isSignedIn ? (
-          <Home allPostsData={undefined}  />
+        <Home allPostsData={undefined} />
       ) : (
         <div className={styles.wrapper}>
           <div className={styles.container}>
@@ -127,7 +133,7 @@ const Login:React.FC<usersProps> = ({ name, email, password }) => {
           </div>
         </div>
       )}
-    </>
+    </motion.div>
   );
 };
 

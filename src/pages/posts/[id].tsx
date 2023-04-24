@@ -7,49 +7,56 @@ import {
 import { Container, Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import Markdown from "markdown-to-jsx";
+import { motion } from "framer-motion";
 
-
-const PostPage = ({ postData, content }: { postData: any; content: any }) => {  return (
-    <Container>
-      <Row>
-        <Col>
+const PostPage = ({ postData, content }: { postData: any; content: any }) => {
+  return (
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.75,
+      }}
+    >
+      <Container>
+        <Row>
+          <Col>
+            <div className="flex justify-center my-5">
+              <p className="category bg-[#DB2800] p-3 w-40 text-center text-[#faebd7]">
+                {postData.category}
+              </p>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="border-t-2 border-b">
+            <div className="flex justify-center md:justify-start">
+              <p className="text-white my-3 category ">{postData.date}</p>
+            </div>
+            <h1 className="category text-[#FAEBD7] text-center my-5 px-3">
+              {postData.title}
+            </h1>
+            <div className="flex justify-center md:justify-end">
+              <Link href={"/"} className="no-underline hover:underline">
+                <p className="text-slate-400 category ">By {postData.author}</p>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+        <Row>
           <div className="flex justify-center my-5">
-            <p className="category bg-[#DB2800] p-3 w-40 text-center text-[#faebd7]">
-              {postData.category}
-            </p>
+            <figure>
+              <Image src={postData.src} alt="alt" width={400} height={300} />
+            </figure>
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="border-t-2 border-b">
-          <div className="flex justify-center md:justify-start">
-            <p className="text-white my-3 category ">{postData.date}</p>
+        </Row>
+        <Row>
+          <div>
+            <Markdown className="Poppins text-white">{content}</Markdown>
           </div>
-          <h1 className="category text-[#FAEBD7] text-center my-5 px-3">
-            {postData.title}
-          </h1>
-          <div className="flex justify-center md:justify-end">
-            <Link href={"/"} className="no-underline hover:underline">
-              <p className="text-slate-400 category ">By {postData.author}</p>
-            </Link>
-          </div>
-        </Col>
-      </Row>
-      <Row>
-        <div className="flex justify-center my-5">
-          <figure>
-            <Image src={postData.src} alt="alt" width={400} height={300} />
-          </figure>
-        </div>
-      </Row>
-      <Row>
-        <div>
-          <Markdown className="Poppins text-white">
-            {content}
-          </Markdown>
-        </div>
-      </Row>
-    </Container>
+        </Row>
+      </Container>
+    </motion.div>
   );
 };
 

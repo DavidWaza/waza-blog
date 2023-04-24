@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
-import styles from '../styles/signup.module.css'
+import styles from "../styles/signup.module.css";
 import React, { useState } from "react";
 import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { signupProps, userState } from "../../lib/scripts";
+import { motion } from "framer-motion";
 
-
-const Signup:React.FC<signupProps> = () => {
+const Signup: React.FC<signupProps> = () => {
   const router = useRouter();
   const [state, setState] = useState<userState>({
     firstName: "",
@@ -25,16 +25,16 @@ const Signup:React.FC<signupProps> = () => {
   const regExp = new RegExp(/\S+@\S+\.\S+/).test(state.email);
 
   // HANDLE CHANGE FUNCTION
-  const handleInputChange = (event:any) => {
+  const handleInputChange = (event: any) => {
     const { name, value } = event.target;
     setState((prevProps) => ({
-      ...prevProps, 
+      ...prevProps,
       [name]: value,
     }));
   };
 
   // HANDLE SELECT FUNCTION
-  const handleSubmit = (event:any) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
 
     if (!state.firstName) {
@@ -102,7 +102,14 @@ const Signup:React.FC<signupProps> = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.75,
+      }}
+      className={styles.wrapper}
+    >
       <div className={styles.container}>
         <p>Be an Author!</p>
         <form onSubmit={handleSubmit} autoComplete="off">
@@ -127,7 +134,6 @@ const Signup:React.FC<signupProps> = () => {
               onChange={handleInputChange}
               placeholder="Last Name"
               className="py-3 px-10 w-full inline-block rounded"
-
             />
             {lastMessage && <p className="text-red-600">{lastMessage}</p>}
           </div>
@@ -140,7 +146,6 @@ const Signup:React.FC<signupProps> = () => {
               onChange={handleInputChange}
               placeholder="Email"
               className="py-3 px-10 w-full inline-block rounded"
-
             />
             {emailMessage && <p className="text-red-600">{emailMessage}</p>}
           </div>
@@ -154,7 +159,6 @@ const Signup:React.FC<signupProps> = () => {
               onChange={handleInputChange}
               placeholder="Password"
               className="py-3 px-10 w-full inline-block rounded"
-
             />
             {passwordMessage && (
               <p className="text-red-600">{passwordMessage}</p>
@@ -181,7 +185,7 @@ const Signup:React.FC<signupProps> = () => {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

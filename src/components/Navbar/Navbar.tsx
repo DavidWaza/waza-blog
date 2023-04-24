@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
+import { motion } from "framer-motion";
 
 type routesType = {
   name: string;
@@ -14,13 +15,21 @@ const Navbar: React.FC<routesType> = ({ className }: any) => {
 
   return (
     <main>
-      <div className="text-center bg-[#212F3C] py-5">
-        {routes.map(({ name, path }, index) => (
-          <Link href={path} key={index} className="nav">
-            <p className={name === "Be a Writer" ? `writer` : ""}>{name}</p>
-          </Link>
-        ))}
-      </div>
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: 0.75,
+        }}
+      >
+        <div className="text-center bg-[#212F3C] py-5">
+          {routes.map(({ name, path }, index) => (
+            <Link href={path} key={index} className="nav">
+              <p className={name === "Be a Writer" ? `writer` : ""}>{name}</p>
+            </Link>
+          ))}
+        </div>
+      </motion.div>
     </main>
   );
 };
