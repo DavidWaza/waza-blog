@@ -3,7 +3,7 @@ import Image from "next/image";
 const LoadingPage = () => {
   return (
     <div className="loader">
-      <div className="flex justify-center relative h-full p-44">
+      <div className="flex justify-center  p-44">
         <Image
           src="/images/cube_loader.gif"
           width={200}
