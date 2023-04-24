@@ -8,9 +8,8 @@ import { Container, Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import Markdown from "markdown-to-jsx";
 
-const PostPage = ({ postData, content }: { postData: any; content: any }) => {
-  console.log(content);
-  return (
+
+const PostPage = ({ postData, content }: { postData: any; content: any }) => {  return (
     <Container>
       <Row>
         <Col>
