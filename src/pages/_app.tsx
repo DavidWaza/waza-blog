@@ -26,10 +26,6 @@ export default function App({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-// Scroll to the top
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <AnimatePresence mode="wait">
@@ -53,7 +49,6 @@ export default function App({ Component, pageProps }: AppProps) {
         className="base-page-size"
       >
         <ToastContainer />
-        <Header />
         <Navbar name={""} path={""} />
         {loading && <Loading />}
         <Component {...pageProps} />

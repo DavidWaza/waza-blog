@@ -22,7 +22,7 @@ const Navbar: React.FC<routesType> = ({ className }: any) => {
           duration: 0.75,
         }}
       >
-        <div className="text-center bg-[#212F3C] py-5">
+        <div className="text-right bg-[#212F3C] py-2">
           {routes.map(({ name, path }, index) => (
             <Link href={path} key={index} className="nav">
               <p className={name === "Be a Writer" ? `writer` : ""}>{name}</p>

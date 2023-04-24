@@ -3,6 +3,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Header from "@/components/Header/Header";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,6 +16,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }: { allPostsData: any }) {
   return (
+
     <motion.div
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -23,6 +25,7 @@ export default function Home({ allPostsData }: { allPostsData: any }) {
       }}
     >
       <main>
+      <Header />
         <Container>
           <Row>
             {allPostsData.map((postData: any) => (
