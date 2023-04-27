@@ -3,9 +3,11 @@ import { Container, Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Header from "@/components/Header/Header";
+import Header from "@/components/Header";
+import { delay } from "../../lib/delay";
 
 export async function getStaticProps() {
+  const wait = await delay(1000)
   const allPostsData = getSortedPostsData();
   return {
     props: {
