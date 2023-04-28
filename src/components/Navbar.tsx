@@ -9,8 +9,8 @@ type routesType = {
 const Navbar: React.FC<routesType> = ({ className }: any) => {
   const routes = [
     { name: "Home", path: "/" },
-    { name: "Log In", path: "/login" },
-    { name: "Be a Writer", path: "/signup" },
+    { name: "Log In", path: "/signin" },
+    { name: "Be a Writer", path: "/register" },
   ];
 
   return (
