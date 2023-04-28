@@ -16,7 +16,7 @@ model User {
   email     String   @unique
   firstName String
   lastName  String
-  passowrd  String
+  password  String
   role      Role     @default(USER)
   posts     Post[]
 }
